@@ -4,11 +4,6 @@
     "noEmit": true,
     "strict": true,
     "target": "esnext",
-    "plugins": [
-      {
-        "name": "typescript-diagnostics-filter",
-        "codes": [80001, 80002]
-      }
-    ]
+    "types": ["node", "vscode"]
   }
 }

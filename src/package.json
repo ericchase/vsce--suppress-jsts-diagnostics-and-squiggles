@@ -1,21 +1,36 @@
 {
-  "name": "typescript-diagnostics-filter",
-  "displayName": "Typescript Diagnostics Filter",
-  "version": "1.0.0",
-  "publisher": "ericchase",
-  "engines": {
-    "vscode": "^1.56.0"
-  },
   "activationEvents": [
     "onStartupFinished"
   ],
   "contributes": {
+    "configuration": {
+      "properties": {
+        "%name%.codes": {
+          "default": [],
+          "description": "%configDescription%",
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        }
+      },
+      "title": "%configTitle%",
+      "type": "object"
+    },
     "typescriptServerPlugins": [
       {
-        "name": "typescript-diagnostics-filter",
-        "enableForWorkspaceTypeScriptVersions": true
+        "enableForWorkspaceTypeScriptVersions": true,
+        "name": "%name%"
       }
     ]
   },
-  "main": "./extension.js"
+  "description": "%description%",
+  "displayName": "%displayName%",
+  "engines": {
+    "vscode": "^1.56.0"
+  },
+  "main": "./extension.js",
+  "name": "%name%",
+  "publisher": "ericchase",
+  "version": "1.0.0"
 }

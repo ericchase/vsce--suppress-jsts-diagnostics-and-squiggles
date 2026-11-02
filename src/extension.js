@@ -1,29 +1,47 @@
 const vscode = require('vscode');
 
+const { CONFIG_KEY, PLUGIN_KEY } = require('./node_modules/hide-jsts-diagnostic-squiggles/constants.js');
+
+// /**
+//  *  @type {NodeJS.Timeout | undefined}
+//  */
+// let timeout = undefined;
+
+/**
+ *  Restarting the entire TS Language Server was the only method I could find that
+ *  reliably refreshed VSCode's diagnostics cache.
+ */
+function restartTsServer() {
+  // vscode.window.showInformationMessage(`[${performance.now()}]: restartTsServer()`);
+  // clearTimeout(timeout);
+  // timeout = setTimeout(async () => {
+  process.env[PLUGIN_KEY] = JSON.stringify(vscode.workspace.getConfiguration().get(CONFIG_KEY));
+  vscode.commands.executeCommand('typescript.restartTsServer');
+  // }, 0);
+}
+
 module.exports = {
   /**
    *  @param {vscode.ExtensionContext} context
    */
-  activate(context) {
-    // self-explanatory: adds a file watcher through vscode api
+  async activate(context) {
     const tsconfigWatcher = vscode.workspace.createFileSystemWatcher('**/tsconfig.json');
-
-    /**
-     *  @type {number | undefined}
-     */
-    let timeout = undefined;
-
-    // triggers when any tsconfig.json in the project is updated
     tsconfigWatcher.onDidChange(() => {
-      // the timer is used as a light debounce
-      clearTimeout(timeout);
-      timeout = setTimeout(async () => {
-        // restarting the entire language server was the only thing that worked reliably
-        await vscode.commands.executeCommand('typescript.restartTsServer');
-      }, 50);
+      restartTsServer();
     });
-
     context.subscriptions.push(tsconfigWatcher);
+
+    context.subscriptions.push(
+      vscode.workspace.onDidChangeConfiguration((event) => {
+        if (event.affectsConfiguration(CONFIG_KEY)) {
+          restartTsServer();
+        }
+      })
+    );
+
+    restartTsServer();
   },
-  deactivate() {}
+  deactivate() {
+    restartTsServer();
+  }
 };
