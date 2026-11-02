@@ -2,7 +2,7 @@
 
 ### Added
 
-- package.json's repository field and links in the readme
+- more package.json fields and links to readme
 
 ## [1.0.1] - 2026/11/02
 

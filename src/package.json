@@ -2,6 +2,13 @@
   "activationEvents": [
     "onStartupFinished"
   ],
+  "author": {
+    "name": "ericchase",
+    "url": "https://github.com/ericchase"
+  },
+  "bugs": {
+    "url": "https://github.com/ericchase/vsce-suppress-jsts-diagnostics-and-squiggles/issues"
+  },
   "contributes": {
     "configuration": {
       "properties": {
@@ -27,14 +34,16 @@
   "description": "%description%",
   "displayName": "%displayName%",
   "engines": {
-    "vscode": "^1.56.0"
+    "vscode": "^1.100.0"
   },
+  "homepage": "https://github.com/ericchase/vsce-suppress-jsts-diagnostics-and-squiggles",
+  "license": "Apache-2.0",
   "main": "./extension.js",
   "name": "suppress-jsts-diagnostics-and-squiggles",
   "publisher": "ericchase",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ericchase/vsce--suppress-jsts-diagnostics-and-squiggles.git"
+    "url": "git+https://github.com/ericchase/vsce-suppress-jsts-diagnostics-and-squiggles.git"
   },
   "version": "1.0.2"
 }

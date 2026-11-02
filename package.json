@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "bun run --cwd ./src vsce package --allow-missing-repository",
+    "build": "bun run --cwd ./src vsce package",
     "format": "prettier --write ."
   },
   "devDependencies": {
