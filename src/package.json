@@ -5,22 +5,22 @@
   "contributes": {
     "configuration": {
       "properties": {
-        "%name%.codes": {
+        "suppress-jsts-diagnostics-and-squiggles.codes": {
           "default": [],
-          "description": "%configDescription%",
+          "description": "Array of JS/TS diagnostic codes to suppress.",
           "items": {
             "type": "number"
           },
           "type": "array"
         }
       },
-      "title": "%configTitle%",
+      "title": "Suppress User-Defined JS/TS Diagnostics And Squiggles",
       "type": "object"
     },
     "typescriptServerPlugins": [
       {
         "enableForWorkspaceTypeScriptVersions": true,
-        "name": "%name%"
+        "name": "suppress-jsts-diagnostics-and-squiggles"
       }
     ]
   },
@@ -30,7 +30,7 @@
     "vscode": "^1.56.0"
   },
   "main": "./extension.js",
-  "name": "%name%",
+  "name": "suppress-jsts-diagnostics-and-squiggles",
   "publisher": "ericchase",
   "version": "1.0.0"
 }

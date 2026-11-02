@@ -1,14 +1,4 @@
-// const fs = require('node:fs');
-// const { PLUGIN_KEY, LOG_PATH } = require('./constants');
-// const starttime = performance.now();
-// /**
-//  * @param {string} message
-//  */
-// function log(message) {
-//   fs.appendFileSync(LOG_PATH, `[${starttime}] [${performance.now()}] ${message}\n`, { encoding: 'utf8' });
-// }
-
-const { PLUGIN_KEY } = require('./constants');
+const { PLUGIN_KEY } = require('suppress-jsts-diagnostics-and-squiggles/constants');
 
 /**
  *  @param {unknown} config
@@ -41,7 +31,6 @@ module.exports = function () {
       try {
         /** @type {Set<number>} */
         const codes = new Set([...getCodes(getSettings()), ...getCodes(createInfo.config)]);
-        // log(`${JSON.stringify([...codes])}\n`);
 
         /**
          *  Creates a basic wrapper over the languageService object so we can modify the

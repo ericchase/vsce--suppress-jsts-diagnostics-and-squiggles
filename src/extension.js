@@ -1,23 +1,14 @@
 const vscode = require('vscode');
 
-const { CONFIG_KEY, PLUGIN_KEY } = require('./node_modules/hide-jsts-diagnostic-squiggles/constants.js');
-
-// /**
-//  *  @type {NodeJS.Timeout | undefined}
-//  */
-// let timeout = undefined;
+const { CONFIG_KEY, PLUGIN_KEY } = require('./node_modules/suppress-jsts-diagnostics-and-squiggles/constants.js');
 
 /**
  *  Restarting the entire TS Language Server was the only method I could find that
  *  reliably refreshed VSCode's diagnostics cache.
  */
 function restartTsServer() {
-  // vscode.window.showInformationMessage(`[${performance.now()}]: restartTsServer()`);
-  // clearTimeout(timeout);
-  // timeout = setTimeout(async () => {
   process.env[PLUGIN_KEY] = JSON.stringify(vscode.workspace.getConfiguration().get(CONFIG_KEY));
   vscode.commands.executeCommand('typescript.restartTsServer');
-  // }, 0);
 }
 
 module.exports = {

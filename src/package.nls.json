@@ -1,7 +1,4 @@
 {
-  "configDescription": "Array of JS/TS diagnostic codes to supress.",
-  "configTitle": "Hide Specific JS/TS Diagnostic Squiggles",
-  "description": "Hides the squiggles for user-defined error/warning/info/hint codes in JavaScript and TypeScript files.",
-  "displayName": "Hide Specific JS/TS Diagnostic Squiggles (Errors, Warnings, Infos, and Hints)",
-  "name": "hide-jsts-diagnostic-squiggles"
+  "description": "Takes a list of user-defined error/warning/info/hint codes and hides the squiggles for those codes in JavaScript and TypeScript files.",
+  "displayName": "Suppress User-Defined JS/TS Diagnostics And Squiggles (Errors, Warnings, Infos, and Hints)"
 }
