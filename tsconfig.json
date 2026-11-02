@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "noEmit": true,
+    "strict": true,
+    "target": "esnext",
+    "plugins": [
+      {
+        "name": "typescript-diagnostics-filter",
+        "codes": [80001, 80002]
+      }
+    ]
+  }
+}

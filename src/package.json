@@ -1,0 +1,21 @@
+{
+  "name": "typescript-diagnostics-filter",
+  "displayName": "Typescript Diagnostics Filter",
+  "version": "1.0.0",
+  "publisher": "ericchase",
+  "engines": {
+    "vscode": "^1.56.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "typescriptServerPlugins": [
+      {
+        "name": "typescript-diagnostics-filter",
+        "enableForWorkspaceTypeScriptVersions": true
+      }
+    ]
+  },
+  "main": "./extension.js"
+}
