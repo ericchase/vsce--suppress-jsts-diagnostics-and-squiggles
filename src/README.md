@@ -49,8 +49,13 @@ By filtering matching rule targets directly out of these data arrays, the editor
 
 This readme was a combined effort by myself _and_ AI. As for the code... AI came up with the initial implementation, but I rewrote almost all of it as I learned what each line was doing and was _supposed_ to be doing. At this point, I basically know what every line does, as the AI wrongly explained each of them to me.
 
-I have no idea what the performance metrics of this extension are, but I think this is a good start. I welcome any discourse in the GitHub repository's issues section.
+I have no idea what the performance metrics of this extension are, but I think this is a good start. I welcome any discourse in the GitHub repository's [issues](https://github.com/ericchase/vsce--suppress-jsts-diagnostics-and-squiggles/issues) section.
 
 # Uninstall
 
 You may need to run the `Restart TS Server` or `Reload Window` command yourself to refresh the UI.
+
+# Repository
+
+- https://github.com/ericchase/vsce--suppress-jsts-diagnostics-and-squiggles
+- https://github.com/ericchase/vsce--suppress-jsts-diagnostics-and-squiggles/issues

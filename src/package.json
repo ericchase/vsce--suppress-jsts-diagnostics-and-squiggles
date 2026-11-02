@@ -32,5 +32,9 @@
   "main": "./extension.js",
   "name": "suppress-jsts-diagnostics-and-squiggles",
   "publisher": "ericchase",
-  "version": "1.0.1"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ericchase/vsce--suppress-jsts-diagnostics-and-squiggles.git"
+  },
+  "version": "1.0.2"
 }
