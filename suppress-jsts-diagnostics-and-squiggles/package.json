@@ -1,5 +1,5 @@
 {
+  "main": "index.js",
   "name": "suppress-jsts-diagnostics-and-squiggles",
-  "version": "1.0.0",
-  "main": "index.js"
+  "version": "1.0.1"
 }
