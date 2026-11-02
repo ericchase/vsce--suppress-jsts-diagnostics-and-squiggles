@@ -1,4 +1,4 @@
-const { PLUGIN_KEY } = require('suppress-jsts-diagnostics-and-squiggles/constants');
+const { PLUGIN_KEY } = require('./constants.js');
 
 /**
  *  @param {unknown} config
@@ -59,7 +59,7 @@ module.exports = function () {
       } catch {
         return createInfo.languageService;
       }
-    }
+    },
     /**
      *  Since we need the both settings and tsconfig.json before the languageService
      *  calls getSemanticDiagnostics and similar methods, this function is basically

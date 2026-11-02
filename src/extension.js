@@ -16,7 +16,7 @@ module.exports = {
    *  @param {vscode.ExtensionContext} context
    */
   async activate(context) {
-    const tsconfigWatcher = vscode.workspace.createFileSystemWatcher('**/tsconfig.json');
+    const tsconfigWatcher = vscode.workspace.createFileSystemWatcher('**/{jsconfig,tsconfig}.json');
     tsconfigWatcher.onDidChange(() => {
       restartTsServer();
     });
@@ -27,12 +27,12 @@ module.exports = {
         if (event.affectsConfiguration(CONFIG_KEY)) {
           restartTsServer();
         }
-      })
+      }),
     );
 
     restartTsServer();
   },
   deactivate() {
     restartTsServer();
-  }
+  },
 };
