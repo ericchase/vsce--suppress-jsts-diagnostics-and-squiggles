@@ -5,5 +5,11 @@
     "strict": true,
     "target": "esnext",
     "types": ["node", "vscode"]
+    // "plugins": [
+    //   {
+    //     "name": "suppress-jsts-diagnostics-and-squiggles",
+    //     "codes": [80001, 80002]
+    //   }
+    // ]
   }
 }
